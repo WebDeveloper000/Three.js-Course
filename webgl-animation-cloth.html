@@ -13,26 +13,13 @@
 				margin: 0px;
 				overflow: hidden;
 			}
-			#info {
-				position: absolute;
-				padding: 10px;
-				width: 100%;
-				text-align: center;
-			}
 			a {
 				text-decoration: underline;
 				cursor: pointer;
 			}
-
         </style>
     </head>
     <body>
-        <div id="info">Simple Cloth Simulation<br/>
-            Verlet integration with relaxed constraints <br/>
-            <a onclick="wind = !wind;">Wind</a> |
-            <a onclick="sphere.visible = !sphere.visible;">Ball</a>
-            <a onclick="togglePins();">Pins</a>
-        </div>
 
         <script src="js/three.js"></script>
 
@@ -52,23 +39,24 @@
             pins = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
             pinsFormation.push( pins );
 
-            pins = [ 0 ];
-            pinsFormation.push( pins );
+            // pins = [ 0 ];
+            // pinsFormation.push( pins );
 
-            pins = [];
-            pinsFormation.push( pins );
+            // pins = [];
+            // pinsFormation.push( pins );
 
-            pins = [ 0, cloth.w ];
-            pinsFormation.push( pins );
+            // pins = [ 0, cloth.w ];
+            // pinsFormation.push( pins );
 
-            pins = pinsFormation[ 1 ];
+            // pins = pinsFormation[ 1 ];
 
-
+            // console.log(pinsFormation);
             function togglePins() {
 
-                pins = pinsFormation[ ~~ (Math.random() * pinsFormation.length) ];
+                pins = pinsFormation[ ~ (Math.random() * pinsFormation.length) ];
 
             }
+            console.log(pins);
 
             if ( WEBGL.isWebGLAvailable() === false ) {
 
